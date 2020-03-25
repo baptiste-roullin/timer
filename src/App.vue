@@ -12,6 +12,7 @@
 import TCircle from   './components/TCircle.vue'
 import Controls from './components/Controls.vue'
 import Presets from  './components/Presets.vue'
+import { store } from './store.js';
 
 
 export default {
@@ -20,7 +21,12 @@ export default {
     TCircle,
     Controls,
     Presets
-  }
+  },
+    data () {
+    return {
+      sharedState: store.state
+    }
+  },
 }
 
 
