@@ -14,7 +14,6 @@
 export default {
   name: 'presets',
   props: {
-    msg: String
   }
 }
 </script>

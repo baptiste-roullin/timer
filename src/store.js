@@ -13,8 +13,8 @@ export const store = {
    reset () {
     return 
   },  
-  change () {
-    return
+  change (time) {
+    this.state.time = time;
   }
   
 }

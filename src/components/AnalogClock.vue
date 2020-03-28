@@ -1,6 +1,6 @@
 <template>
  
- <div class="circle"> <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+ <div class="analogClock"> <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
     <g transform="translate(110,110)">
       <circle r="95" class="e-c-base"/>
       <g transform="rotate(-90)">
@@ -19,9 +19,8 @@
 //import { store } from '../store.js';
 
 export default {
-  name: 'TCircle',
+  name: 'analogClock',
   props: {
-    msg: String
   }
 }
 </script>

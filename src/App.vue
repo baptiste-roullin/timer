@@ -1,7 +1,8 @@
 <template>
 <div class="container">
   <div class="circle-container">
-    <TCircle></TCircle>
+    <AnalogClock></AnalogClock>
+    <digitalClock :timeProp='sharedState.time'></digitalClock>
     <Controls></Controls>
   </div>
   <presets></presets>
@@ -9,7 +10,9 @@
 </template>
 
 <script>
-import TCircle from   './components/TCircle.vue'
+import DigitalClock from   './components/DigitalClock.vue'
+
+import AnalogClock from   './components/AnalogClock.vue'
 import Controls from './components/Controls.vue'
 import Presets from  './components/Presets.vue'
 import { store } from './store.js';
@@ -18,9 +21,10 @@ import { store } from './store.js';
 export default {
   name: 'app',
   components: {
-    TCircle,
+    AnalogClock,
     Controls,
-    Presets
+    Presets,
+    DigitalClock
   },
     data () {
     return {

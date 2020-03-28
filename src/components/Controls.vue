@@ -1,17 +1,11 @@
 <template>
- 
-
-<div class="tempsControls">
-	<div class="temps">
-		<div class="input-time">{{count}}</div>
-	</div>	
+	
 	<div class="controls">
 		
-		<button class="addMinute" v-on:click="addMinute"></button>
-		<button class="play" id="pause" v-on:click="startCountdown"></button>
-		<button class="restart" onClick="document.location.reload(false)"></button>
+		<!-- <button class="addMinute" v-on:click=""></button>
+    <button class="play" id="pause" v-on:click=""></button>
+    <button class="restart" onClick="document.location.reload(false)"></button> -->
 	</div>
-</div>
 </template>
 
 <script>
