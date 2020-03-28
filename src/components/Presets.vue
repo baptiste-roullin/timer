@@ -1,11 +1,9 @@
 <template>
- <div>
-    <div class="preset-times" v-for="preset in presetList">
+    <div class=" ">
 
-      <button class="time" @click="onClick(preset)">{{preset}} secondes</button>
+      <button class="time" v-for="preset in presetList" @click="onClick(preset)">{{preset}} secondes</button>
 
     </div>
-</div>
 </template>
 
 <script>

@@ -1,11 +1,11 @@
 
 export const store = {
   state: {
-    time: 5.00,
-    initialTime:5.00,
+    time: 40.00,
+    initialTime:40.00,
     timerIsOn:false
   },
-  presets:["1", "5", "10", "20", "30"],
+  presets:[1, 5, 10, 20, 30],
 
   toggle() {
     if (this.state.timerIsOn === false) {
@@ -15,7 +15,6 @@ export const store = {
       }
     else {
       this.state.timerIsOn = false;
-      window.console.log(this)
       clearInterval(this.intervalTimer);
     }
   },
@@ -51,7 +50,6 @@ export const store = {
     let timeLeft = Math.round((endOfCountdown - Date.now()) / 1000);
     store.change(timeLeft);
     if(timeLeft <= 0){
-          window.console.log(timeLeft)
 
       clearInterval(store.intervalTimer);
       store.state.timerIsOn = false;

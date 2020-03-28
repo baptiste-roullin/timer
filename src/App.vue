@@ -1,18 +1,42 @@
+
+
+<!-- 
+
+Archéologie 
+v1 : https://www.cssscript.com/circular-countdown-timer-javascript-css3/
+v2 : Christel Agier
+v3 : Baptiste Roullin
+
+prevent letteers input
+afficher les unités
+gestion des minutes / secondes
+fin
+  son
+  reset quand on reclique sur play
+
+
+styles
+  survol
+  transitions
+
+
+ -->
+
 <template>
 <div class="container">
   <div class="circle-container">
-    <AnalogClock></AnalogClock>
-    <digitalClock :value='sharedState.time'></digitalClock>
+    <ProgressBar :propState='sharedState'></ProgressBar>
+    <InputField :value='sharedState.time'></InputField>
     <Controls :propState='sharedState'></Controls>
   </div>
-  <presets :presetList="presets"></presets>
+  <presets class="preset-times" :presetList="presets"></presets>
 </div>
 </template>
 
 <script>
-import DigitalClock from   './components/DigitalClock.vue'
+import InputField from   './components/InputField.vue'
 
-import AnalogClock from   './components/AnalogClock.vue'
+import ProgressBar from   './components/ProgressBar.vue'
 import Controls from './components/Controls.vue'
 import Presets from  './components/Presets.vue'
 import { store } from './store.js';
@@ -21,10 +45,10 @@ import { store } from './store.js';
 export default {
   name: 'app',
   components: {
-    AnalogClock,
+    ProgressBar,
     Controls,
     Presets,
-    DigitalClock
+    InputField
   },
     data () {
     return {

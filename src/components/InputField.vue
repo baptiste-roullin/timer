@@ -1,8 +1,8 @@
 <template>
  
-	<div class="temps DigitalClock">
+	<div class="temps InputField">
 		<input 
-			type="text" pattern="[0-9]"
+			type="text"
 			:name="name" 
 			class="input-time" 
 			:value="value" 
@@ -16,18 +16,20 @@
 import { store } from '../store.js';
 
 export default {
-	name: 'DigitalClock',
+	name: 'InputField',
 		props:['name', 'value'],
 		data () {
 			return {
-				// time:timeProp
 			}
 		}
 	,
 	methods:{
 		onInput(newValue) {
+			newValue = newValue || 0; // pour gérer le cas du champ vide
+			newValue = parseInt(newValue, 10) // <input> est de type 'text' pour l'instant
 			this.$emit('input', newValue);
 			store.change(newValue);
+			store.state.initialTime = newValue;
 		},
 
 	
@@ -38,7 +40,7 @@ export default {
 
 <style scoped>
 
-.DigitalClock {
+.InputField {
 	width:100%;
 
 }
