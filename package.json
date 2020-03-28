@@ -29,7 +29,10 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+    "vue/require-v-for-key": "off",
+    "vue/no-console": "off"
+      },
     "parserOptions": {
       "parser": "babel-eslint"
     }

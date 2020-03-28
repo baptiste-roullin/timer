@@ -16,7 +16,6 @@
 
 <script>
 
-//import { store } from '../store.js';
 
 export default {
   name: 'analogClock',
@@ -27,6 +26,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.analogClock {
+  margin: auto;
+  text-align: center;
+}
 
 .e-c-base {
   fill: none;

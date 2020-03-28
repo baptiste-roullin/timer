@@ -1,24 +1,30 @@
 <template>
- 
-    <div class="preset-times">
-      <button data-setter="1min" class="time">01:00</button>
-      <button data-setter="5min" class="time">05:00</button>
-      <button data-setter="10min" class="time">10:00</button>
-      <button data-setter="20min" class="time">20:00</button>
-      <button data-setter="30min" class="time">30:00</button>
-    </div>
+ <div>
+    <div class="preset-times" v-for="preset in presetList">
 
+      <button class="time" @click="onClick(preset)">{{preset}} secondes</button>
+
+    </div>
+</div>
 </template>
 
 <script>
+ import { store } from '../store.js';
+
 export default {
   name: 'presets',
-  props: {
+  props: ['presetList'],
+  methods:{
+    onClick(newValue) {
+      store.change(newValue);
+      store.toggle();
+
+
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 .preset-times {
@@ -29,7 +35,7 @@ export default {
 
 .preset-times button[data-setter] {
   background: white;  
-  width:50px;
+  width:50px; 
   height:22px;  
   border: 1px solid #FFC64C;
   border-radius: 65px;

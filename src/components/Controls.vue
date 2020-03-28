@@ -2,29 +2,33 @@
 	
 	<div class="controls">
 		
-		<!-- <button class="addMinute" v-on:click=""></button>
-    <button class="play" id="pause" v-on:click=""></button>
-    <button class="restart" onClick="document.location.reload(false)"></button> -->
+<!-- 		<button class="addMinute" v-on:click=""></button>
+ -->    <button v-bind:class="propState.timerIsOn ? 'pause' : 'play'"  id="pause" v-on:click="toggle()"></button>
+        <button class="restart" onClick="document.location.reload(false)"></button>
 	</div>
 </template>
 
 <script>
+import { store } from '../store.js';
 
 export default {
 	name: 'controls'
 	,
-
+  props: ['propState'],
 	data: function() {
 		return {
 		}
 	},
 
-	methods: {
-		
-	}
-
+  methods:{
+    toggle() {
+      store.toggle();
+    },
+    reset() {
+      store.reset()
+    }
+  }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -37,6 +41,7 @@ export default {
   text-align : center;
   width:100%;
   background-color: transparent;
+  text-align: center;
 }
 
 
@@ -67,33 +72,12 @@ export default {
 }
 
 
-.minutes-set {
-  float: left;
-  margin-right: 28px;
-}
-
-.seconds-set { float: right; }
-
-
-.tempsControls{
-  width:180px;
-  position:absolute;
-  top:115px;
-  left:60px;
-}
-
 .controls {
    display:flex;
   justify-content:center;
   margin-top: 10px;
 }
 
-.display-remain-time {
-  font-family: 'Roboto';
-  font-weight: 100;
-  font-size: 65px;
-  color: #3B72FF;
-}
 
 #pause {
   outline: none;

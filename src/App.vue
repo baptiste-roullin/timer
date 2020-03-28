@@ -2,10 +2,10 @@
 <div class="container">
   <div class="circle-container">
     <AnalogClock></AnalogClock>
-    <digitalClock :timeProp='sharedState.time'></digitalClock>
-    <Controls></Controls>
+    <digitalClock :value='sharedState.time'></digitalClock>
+    <Controls :propState='sharedState'></Controls>
   </div>
-  <presets></presets>
+  <presets :presetList="presets"></presets>
 </div>
 </template>
 
@@ -28,7 +28,8 @@ export default {
   },
     data () {
     return {
-      sharedState: store.state
+      sharedState: store.state,
+      presets:store.presets
     }
   },
 }
@@ -49,6 +50,13 @@ export default {
 .container {
   position: relative;
 
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .setters {
