@@ -2,9 +2,9 @@
 	
 	<div class="controls">
 		
-<!-- 		<button class="addMinute" v-on:click=""></button>
- -->    <button v-bind:class="propState.timerIsOn ? 'pause' : 'play'"  id="pause" @click="toggle()"></button>
-        <button class="restart" @click="reset()"></button>
+    <button class="addMinute" @click="addMinute"></button>
+    <button v-bind:class="propState.timerIsOn ? 'pause' : 'play'"  id="pause" @click="toggle()"></button>
+    <button class="restart" @click="reset()"></button>
 	</div>
 </template>
 
@@ -24,6 +24,9 @@ export default {
     toggle() {
       store.toggle();
     },
+    addMinute() {
+      store.addMinute()
+    },
     reset() {
       store.reset()
     }
@@ -37,7 +40,7 @@ export default {
 .input-time{
   border:none;
   font-size : 58px;
-  color : #3B72FF;
+  color : var(--main);
   text-align : center;
   width:100%;
   background-color: transparent;

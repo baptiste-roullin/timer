@@ -34,13 +34,13 @@ export default {
 
 .e-c-base {
   fill: none;
-  stroke: #f1f1f1;
+  stroke: var(--main);
   stroke-width: 30px
 }
 
 .e-c-progress {
   fill: none;
-  stroke: #3B72FF;
+  stroke: var(--main);;
   stroke-width: 30px;
   transition-property: stroke, stroke-dashoffset;
   transition-duration: 0.7s;
@@ -48,8 +48,8 @@ export default {
 }
 
 .e-c-pointer {
-  fill: #FFF;
-  stroke: #3B72FF;
+  fill: #fff;
+  stroke: #111;
   stroke-width: 2px;
   transition-property: stroke;
   transition-duration: 0.7s;

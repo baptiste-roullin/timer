@@ -25,6 +25,12 @@ export const store = {
     this.toggle();
 
   }, 
+  addMinute() {
+    this.state.time = this.state.time + 60;
+
+
+  },
+
 
   initTime(time) {
     this.state.initialTime = time;

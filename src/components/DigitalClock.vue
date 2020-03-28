@@ -1,8 +1,13 @@
 <template>
  
 	<div class="temps DigitalClock">
-		<input type="text" :name="name" class="input-time" :value="value" @blur="onInput($event.target.value)">
-	
+		<input 
+			type="text" pattern="[0-9]"
+			:name="name" 
+			class="input-time" 
+			:value="value" 
+			@blur="onInput($event.target.value)"
+> 
 	</div>
 
 </template>
@@ -32,12 +37,16 @@ export default {
 </script>
 
 <style scoped>
+
+.DigitalClock {
+	width:100%;
+
+}
 .input-time{
   border:none;
   font-size : 58px;
-  color : #3B72FF;
+  color : var(--main);;
   text-align : center;
-  width:100%;
   background-color: transparent;
 }
 

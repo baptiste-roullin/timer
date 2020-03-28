@@ -40,6 +40,10 @@ export default {
 
 <style>
 
+:root{
+  --main:#2D6095;;
+};
+
 @font-face {
  font-family: "Raleway";
  font-weight: 400;
