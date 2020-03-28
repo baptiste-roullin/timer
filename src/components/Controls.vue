@@ -3,8 +3,8 @@
 	<div class="controls">
 		
 <!-- 		<button class="addMinute" v-on:click=""></button>
- -->    <button v-bind:class="propState.timerIsOn ? 'pause' : 'play'"  id="pause" v-on:click="toggle()"></button>
-        <button class="restart" onClick="document.location.reload(false)"></button>
+ -->    <button v-bind:class="propState.timerIsOn ? 'pause' : 'play'"  id="pause" @click="toggle()"></button>
+        <button class="restart" @click="reset()"></button>
 	</div>
 </template>
 

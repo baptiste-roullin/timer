@@ -2,7 +2,7 @@
 export const store = {
   state: {
     time: 5.00,
-
+    initialTime:5.00,
     timerIsOn:false
   },
   presets:["1", "5", "10", "20", "30"],
@@ -21,8 +21,17 @@ export const store = {
   },
 
   reset() {
-   
-  },  
+    this.change(this.state.initialTime)
+    this.toggle();
+
+  }, 
+
+  initTime(time) {
+    this.state.initialTime = time;
+    this.change(time)
+
+  },
+
   change(time) {
     this.state.time = time;
   },

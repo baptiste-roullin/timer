@@ -16,7 +16,7 @@ export default {
   props: ['presetList'],
   methods:{
     onClick(newValue) {
-      store.change(newValue);
+      store.initTime(newValue);
       store.toggle();
 
 
