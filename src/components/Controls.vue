@@ -2,7 +2,7 @@
 	
 	<div class="controls">
 		
-    <button class="addMinute" @click="addMinute"></button>
+    <button class="addMinute" @click="addMinute()"></button>
     <button v-bind:class="propState.timerIsOn ? 'pause' : 'play'"  id="pause" @click="toggle()"></button>
     <button class="restart" @click="reset()"></button>
 	</div>
@@ -26,6 +26,9 @@ export default {
     },
     addMinute() {
       store.addMinute()
+      store.toggle()
+      store.initTime(store.state.time);
+
     },
     reset() {
       store.reset()

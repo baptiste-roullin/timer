@@ -26,8 +26,6 @@ export const store = {
   }, 
   addMinute() {
     this.state.time = this.state.time + 60;
-
-
   },
 
 
