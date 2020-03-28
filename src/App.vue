@@ -7,7 +7,9 @@ v1 : https://www.cssscript.com/circular-countdown-timer-javascript-css3/
 v2 : Christel Agier
 v3 : Baptiste Roullin
 
-prevent letteers input
+
+add minute est ignoré si pas en pause
+prevent letters input
 afficher les unités
 gestion des minutes / secondes
 fin
