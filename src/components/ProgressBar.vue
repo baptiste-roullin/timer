@@ -1,7 +1,7 @@
 <template>
  
- <div class="ProgressBar"> <svg width="600" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
-    <g transform="translate(110,110)">
+ <div class="ProgressBar"> <svg width="500" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+    <g transform="translate(60,60)">
       <circle v-bind:r="radius" class="e-c-base"/>
       <g transform="rotate(-90)">
         <circle v-bind:r="radius" class="e-c-progress" v-bind:style="vanishingCircle"/>
@@ -31,9 +31,8 @@ export default {
       let degree = 360 * -store.state.time / (store.state.initialTime);
       return `transform: rotate(${degree}deg)`
     },
-    //95 : rayon du circle
     vanishingCircle: function() {
-      let length = Math.PI * 2 * 95;
+      let length = Math.PI * 2 * this.radius;
       var offset = length * store.state.time / (store.state.initialTime) + length;
       return `strokeDashoffset: ${offset}; strokeDasharray: ${length};`
   }    
@@ -49,7 +48,7 @@ export default {
 .ProgressBar {
   margin: auto;
   text-align: center;
-  width: 1000px
+  
 }
 
 .e-c-base {
@@ -73,8 +72,9 @@ export default {
 
 .e-c-pointer {
   fill: #fff;
-  stroke: #111;
-  stroke-width: 2px;
+  stroke: #213967;
+  stroke-width: 1px;
+
   transition-property: all;
   transition-duration: 0.5s;
 

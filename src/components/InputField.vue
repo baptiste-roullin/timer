@@ -77,8 +77,7 @@ export default {
 .InputField .minutes {
     position: absolute;
     bottom: 0;
-	right: 23rem;
-    
+	right: 7.5rem;
 }
 
 .input-time:focus {
@@ -88,10 +87,8 @@ export default {
 	display: inline-block;
 	color: #698AAB;
 	position: absolute;
-	right: 12rem;
+	right: -3rem;;
 	bottom: -8px;
-
-
 }
 
 .secondes {
