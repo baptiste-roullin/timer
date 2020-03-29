@@ -1,14 +1,14 @@
 
 export const store = {
   state: {
-    time: 40.00,
-    initialTime:40.00,
+    time: 60.00,
+    initialTime:60.00,
     timerIsOn:false
   },
-  presets:[1, 5, 10, 20, 30],
+  presets:[60, 300, 600, 1200, 1800],
 
   toggle() {
-    if (this.state.timerIsOn === false) {
+    if ( (this.state.timerIsOn === false) && (this.state.time > 0) ) {
       this.state.timerIsOn = true;
       this.timerLoop(this.state.time) ;
 
@@ -47,7 +47,7 @@ export const store = {
   this.intervalTimer = setInterval(function(){
     let timeLeft = Math.round((endOfCountdown - Date.now()) / 1000);
     store.change(timeLeft);
-    if(timeLeft <= 0){
+    if(timeLeft === 0){
 
       clearInterval(store.intervalTimer);
       store.state.timerIsOn = false;

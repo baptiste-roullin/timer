@@ -32,6 +32,7 @@ styles
     <Controls :propState='sharedState'></Controls>
   </div>
   <presets class="preset-times" :presetList="presets"></presets>
+  <img class="logo" @click="reset()" src="../public/img/icons/logo.svg" />
 </div>
 </template>
 
@@ -52,6 +53,11 @@ export default {
     Presets,
     InputField
   },
+  methods: {
+    reset() {
+      store.reset()
+    }
+  },
     data () {
     return {
       sharedState: store.state,
@@ -66,8 +72,18 @@ export default {
 
 <style>
 
+.logo {
+  position: absolute;
+  top:1em;
+  right: 1em;
+  width:50px;
+  cursor: pointer;
+  opacity: .6;
+
+}
+
 :root{
-  --main:#2D6095;;
+  --main:#2D6095;
 };
 
 @font-face {
@@ -77,16 +93,13 @@ export default {
 }
 
 
-.container {
-  position: relative;
-
-}
 
 body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: verdana;
 }
 
 .setters {

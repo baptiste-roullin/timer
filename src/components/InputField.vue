@@ -5,9 +5,16 @@
 			type="text"
 			:name="name" 
 			class="input-time" 
-			:value="value" 
-			@blur="onInput($event.target.value)"
+			:value="Math.floor(value/60)" 
+			@blur="onInput($event.target.value*60)"
 > 
+		<span class="minutes unit">min</span>
+
+		<div class="secondes-container">		
+			<span class="secondes">{{value%60 || '00'}}</span>
+			<span class="unit">sec</span>
+		</div>
+
 	</div>
 
 </template>
@@ -25,7 +32,7 @@ export default {
 	,
 	methods:{
 		onInput(newValue) {
-			newValue = newValue || 0; // pour gérer le cas du champ vide
+			newValue = newValue || '00'; // pour gérer le cas du champ vide
 			newValue = parseInt(newValue, 10) // <input> est de type 'text' pour l'instant
 			this.$emit('input', newValue);
 			store.change(newValue);
@@ -41,31 +48,53 @@ export default {
 <style scoped>
 
 .InputField {
-	width:100%;
+	width:auto;
+	text-align: center;
+	color : var(--main);
+	margin: 3rem 0;
+	position: relative;
 
 }
 .input-time{
   border:none;
-  font-size : 58px;
-  color : var(--main);;
+  font-size : 5em;
+  color : var(--main);
   text-align : center;
-  background-color: transparent;
+  width: 3ch;
+  background-color: #f8f8f8;
+  border-bottom: white 1px solid;
+  height: 1em;
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 2px #698AAB;
 }
 
+.InputField .minutes {
+    position: absolute;
+    bottom: 0;
+    right: 4rem;
+    
+}
 
 .input-time:focus {
   outline:none;
 }
+.secondes-container {
+	display: inline-block;
+	color: #698AAB;
+	position: absolute;
+	right: -7rem;
+	bottom: 0;
 
 
-
-.minutes-set {
-  float: left;
-  margin-right: 28px;
 }
 
-.seconds-set { float: right; }
+.secondes {
+	font-size:3em;
+}
 
+.unit {
+font-size: 1.7em;
+}
 
 .tempsControls{
   width:180px;
