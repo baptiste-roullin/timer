@@ -1,12 +1,12 @@
 <template>
  
- <div class="ProgressBar"> <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+ <div class="ProgressBar"> <svg width="600" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
     <g transform="translate(110,110)">
-      <circle r="95" class="e-c-base"/>
+      <circle v-bind:r="radius" class="e-c-base"/>
       <g transform="rotate(-90)">
-        <circle r="95" class="e-c-progress" v-bind:style="vanishingCircle"/>
+        <circle v-bind:r="radius" class="e-c-progress" v-bind:style="vanishingCircle"/>
         <g id="e-pointer" >
-          <circle cx="95" cy="0" r="14" v-bind:style="watchClockRotation" class="e-c-pointer" v-bind:class="propState.timerIsOn ? '' : 'inactive' "/>
+          <circle v-bind:cx="radius" cy="0" r="8" v-bind:style="watchClockRotation" class="e-c-pointer" v-bind:class="propState.timerIsOn ? '' : 'inactive' "/>
         </g>
       </g>
     </g>
@@ -23,6 +23,7 @@ export default {
   props: ['propState'],
    data () {
     return {
+      radius:50
     }
   },
   computed: {
@@ -44,27 +45,29 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+
 .ProgressBar {
   margin: auto;
   text-align: center;
+  width: 1000px
 }
 
 .e-c-base {
   fill: none;
   stroke: lightgrey;
-  stroke-width: 30px
+  stroke-width: var(--progress-bar-width)
 }
 
 .e-c-progress {
   fill: none;
-  stroke: var(--main);;
-  stroke-width: 30px;
+  stroke: var(--main);
+  stroke-width: var(--progress-bar-width);
   transition-property: stroke, stroke-dashoffset;
   transition-duration: 0.7s;
 }
 
 .e-c-pointer.inactive {
-  opacity: .5;
+  fill: #96b0ca
 
 }
 

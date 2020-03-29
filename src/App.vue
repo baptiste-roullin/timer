@@ -84,6 +84,7 @@ export default {
 
 :root{
   --main:#2D6095;
+  --progress-bar-width:10px;
 };
 
 @font-face {
@@ -99,7 +100,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: verdana;
+  font-family: raleway;
+  font-feature-settings: "lnum";
+
 }
 
 .setters {
@@ -112,6 +115,7 @@ body {
 
 
 h1 { margin-top:150px; text-align:center;}
+
 body { 
 background-color:#eee;margin: 0;
 padding: 0;
@@ -121,7 +125,9 @@ justify-content: center;
 align-items: center;
 }
 
-
+input, button {
+    font-feature-settings: "lnum";
+}
 
 
 </style>

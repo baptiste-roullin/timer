@@ -51,7 +51,7 @@ export default {
 	width:auto;
 	text-align: center;
 	color : var(--main);
-	margin: 3rem 0;
+	margin: 0 0 3rem ;
 	position: relative;
 
 }
@@ -65,13 +65,19 @@ export default {
   border-bottom: white 1px solid;
   height: 1em;
   border-radius: 3px;
-  box-shadow: inset 0px 1px 2px #698AAB;
+  box-shadow: inset 0px 1px 2px #698AAB, 0px 0px 0px white;
+  font-family: inherit;
+  transition: all .2s cubic-bezier(.22,.61,.36,1);
+}
+
+.input-time:focus {
+    box-shadow: 0px 0px 0px white inset, 0px 3px 3px #698AAB;
 }
 
 .InputField .minutes {
     position: absolute;
     bottom: 0;
-    right: 4rem;
+	right: 23rem;
     
 }
 
@@ -82,8 +88,8 @@ export default {
 	display: inline-block;
 	color: #698AAB;
 	position: absolute;
-	right: -7rem;
-	bottom: 0;
+	right: 12rem;
+	bottom: -8px;
 
 
 }
