@@ -4,10 +4,12 @@
       <inline-svg :src="require('../assets/addMinute.svg')"></inline-svg>
     </button>
     
-    <div class="toggle-wrapper" v-bind:class="propState.timerIsOn ? 'pause' : 'play'">
-      <button   id="pause" @click="toggle()">
-        <inline-svg class="pause" :src="require('../assets/pause.svg')"></inline-svg>      
+    <div class="toggle-wrapper" >
+      <button   id="pause" @click="toggle()" >
+        <inline-svg v-show="propState.timerIsOn" class="pause" :src="require('../assets/pause.svg')"></inline-svg>
+        <inline-svg v-show="!propState.timerIsOn" class="pause" :src="require('../assets/play.svg')"></inline-svg>
       </button>
+
     </div>
     <button class="restart" @click="reset()">
       <inline-svg :src="require('../assets/reset.svg')"></inline-svg>
@@ -67,7 +69,7 @@ export default {
 .controls {
    display:flex;
   justify-content:center;
-  margin-top: 10px;
+  margin: 10px auto 20px;
 }
 
 .controls > * {
