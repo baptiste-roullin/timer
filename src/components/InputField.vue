@@ -54,16 +54,15 @@ export default {
 	width:auto;
 	text-align: center;
 	color : var(--main);
-	margin: 0 0 3rem ;
-
+	margin: 0 0 3.5rem;
 
 }
 .input-time{
   border:none;
-  font-size : 5rem;
+  font-size : 8rem;
   color : var(--main);
   text-align : center;
-  width: 9rem;
+  width: 13rem;
   background-color: #f8f8f8;
   border-bottom: white 1px solid;
   height: 1em;
@@ -85,7 +84,7 @@ export default {
 .unit {
 	font-size: 1.7em;
 	position: absolute;
-	right: 15%;
+	right: 8%;
 	bottom: 0%;
 }
 
@@ -97,7 +96,7 @@ export default {
 
 .secondes-container {
 	color: #698AAB;
-	margin: 1em auto 0;
+	margin: 3em auto 0;
 	position: relative;
 	cursor: default;
 
@@ -105,7 +104,7 @@ export default {
 
 .secondes {
 	text-align: center;
-	width: 9rem;
+	width: 13rem;
 	display: block;
 	border-bottom: 2px solid #698AAB;
 	margin: auto;
