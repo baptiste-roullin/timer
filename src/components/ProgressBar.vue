@@ -1,12 +1,12 @@
 <template>
  
- <div class="ProgressBar"> <svg width="500" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+ <div class="ProgressBar"> <svg width="90vh" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
     <g transform="translate(60,60)">
       <circle v-bind:r="radius" class="e-c-base"/>
       <g transform="rotate(-90)">
         <circle v-bind:r="radius" class="e-c-progress" v-bind:style="vanishingCircle"/>
         <g id="e-pointer" >
-          <circle v-bind:cx="radius" cy="0" r="8" v-bind:style="watchClockRotation" class="e-c-pointer" v-bind:class="propState.timerIsOn ? '' : 'inactive' "/>
+          <circle v-bind:cx="radius" cy="0" r="5" v-bind:style="watchClockRotation" class="e-c-pointer" v-bind:class="propState.timerIsOn ? '' : 'inactive' "/>
         </g>
       </g>
     </g>
@@ -46,8 +46,12 @@ export default {
 
 
 .ProgressBar {
-  margin: auto;
-  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
   
 }
 
@@ -62,7 +66,7 @@ export default {
   stroke: var(--main);
   stroke-width: var(--progress-bar-width);
   transition-property: stroke, stroke-dashoffset;
-  transition-duration: 0.7s;
+  transition-duration: 0.5s;
 }
 
 .e-c-pointer.inactive {

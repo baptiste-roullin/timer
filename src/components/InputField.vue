@@ -1,17 +1,20 @@
 <template>
  
 	<div class="temps InputField">
+	<div class="minutes-container">		
 		<input 
 			type="text"
 			:name="name" 
 			class="input-time" 
 			:value="Math.floor(value/60)" 
 			@blur="onInput($event.target.value*60)"
-> 
+		> 
 		<span class="minutes unit">min</span>
 
+	</div>
+
 		<div class="secondes-container">		
-			<span class="secondes">{{value%60 || '00'}}</span>
+			<span class="secondes">{{value%60 || '0'}}</span>
 			<span class="unit">sec</span>
 		</div>
 
@@ -52,15 +55,15 @@ export default {
 	text-align: center;
 	color : var(--main);
 	margin: 0 0 3rem ;
-	position: relative;
+
 
 }
 .input-time{
   border:none;
-  font-size : 5em;
+  font-size : 5rem;
   color : var(--main);
   text-align : center;
-  width: 3ch;
+  width: 9rem;
   background-color: #f8f8f8;
   border-bottom: white 1px solid;
   height: 1em;
@@ -74,44 +77,43 @@ export default {
     box-shadow: 0px 0px 0px white inset, 0px 3px 3px #698AAB;
 }
 
-.InputField .minutes {
-    position: absolute;
-    bottom: 0;
-	right: 7.5rem;
-}
 
 .input-time:focus {
   outline:none;
 }
-.secondes-container {
-	display: inline-block;
-	color: #698AAB;
+
+.unit {
+	font-size: 1.7em;
 	position: absolute;
-	right: -3rem;;
-	bottom: -8px;
+	right: 15%;
+	bottom: 0%;
+}
+
+
+
+.minutes-container  {
+	position: relative;
+}
+
+.secondes-container {
+	color: #698AAB;
+	margin: 1em auto 0;
+	position: relative;
+	cursor: default;
+
 }
 
 .secondes {
-	font-size:3em;
-}
-
-.unit {
-font-size: 1.7em;
-}
-
-.tempsControls{
-  width:180px;
-  position:absolute;
-  top:115px;
-  left:60px;
+	text-align: center;
+	width: 9rem;
+	display: block;
+	border-bottom: 2px solid #698AAB;
+	margin: auto;
+	height: 1.05em;
+	font-size:3.5rem;
 }
 
 
-.display-remain-time {
-  font-family: 'Roboto';
-  font-weight: 100;
-  font-size: 65px;
-  color: #3B72FF;
-}
+
 
 </style>

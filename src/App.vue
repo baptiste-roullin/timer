@@ -8,30 +8,29 @@ v2 : Christel Agier
 v3 : Baptiste Roullin
 
 
-add minute est ignoré si pas en pause
+décomposer toggle en play() et pause()
 prevent letters input
-afficher les unités
-gestion des minutes / secondes
 fin
   son
   reset quand on reclique sur play
-
+  couleur de fond ?
 
 styles
-  survol
-  transitions
-
+  qercle qui change de couleur
+notif desktop
 
  -->
 
 <template>
 <div class="container">
-  <div class="circle-container">
-    <ProgressBar :propState='sharedState'></ProgressBar>
+  <ProgressBar :propState='sharedState'></ProgressBar>
+
+  <div class="inside-circle">
     <InputField :value='sharedState.time'></InputField>
     <Controls :propState='sharedState'></Controls>
+    <presets class="preset-times" :presetList="presets"></presets>
   </div>
-  <presets class="preset-times" :presetList="presets"></presets>
+
   <img class="logo" @click="reset()" src="../public/img/icons/logo.svg" />
 </div>
 </template>
@@ -76,16 +75,24 @@ export default {
   position: absolute;
   top:1em;
   right: 1em;
-  width:50px;
+  width:40px;
   cursor: pointer;
-  opacity: .6;
+  opacity: .5;
 
 }
 
 :root{
   --main:#2D6095;
-  --progress-bar-width:10px;
+  --progress-bar-width:8px;
 };
+
+
+.inside-circle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 @font-face {
  font-family: "Raleway";
@@ -104,13 +111,6 @@ body {
   font-feature-settings: "lnum";
 
 }
-
-.setters {
-  position: absolute;
-  left: 85px;
-  top: 75px;
-}
-
 
 
 

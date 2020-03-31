@@ -4,7 +4,7 @@ module.exports = {
     ? '/Divers/Timer/'
     : '/',
   pwa: {
-    themeColor: '#4DBA87',
+    themeColor: '#96b0ca',
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'no',
     appleMobileWebAppStatusBarStyle: 'black',
