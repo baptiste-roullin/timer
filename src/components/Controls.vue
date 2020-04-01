@@ -27,20 +27,13 @@ export default {
   components: {InlineSvg},
 
   props: ['propState'],
-	data: function() {
-		return {
-		}
-	},
 
   methods:{
     toggle() {
       store.toggle();
     },
     addMinute() {
-      store.addMinute()
-      store.toggle()
-      store.initTime(store.state.time);
-
+      store.addTime(60)
     },
     reset() {
       store.reset()

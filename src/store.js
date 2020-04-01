@@ -18,14 +18,24 @@ export const store = {
       clearInterval(this.intervalTimer);
     }
   },
+  pause()   {
+      this.state.timerIsOn = false;
+      clearInterval(this.intervalTimer);
+  },
+  play()   {
+      this.state.timerIsOn = true;
+      this.timerLoop(this.state.time) ;
+  },
 
   reset() {
     this.change(this.state.initialTime)
-    this.toggle();
+    this.pause();
 
   }, 
-  addMinute() {
-    this.state.time = this.state.time + 60;
+  addTime(addendum) {
+    this.state.time = this.state.time + addendum;
+    this.state.initialTime = this.state.time;
+
   },
 
 

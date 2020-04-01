@@ -8,7 +8,11 @@
 			class="input-time" 
 			:value="Math.floor(value/60)" 
 			@blur="onInput($event.target.value*60)"
+			@keypress="isNumber($event)"
+			@keyup.enter="$event.target.blur($event.target.value*60), play()"
+			@focus="pause()"
 		> 
+
 		<span class="minutes unit">min</span>
 
 	</div>
@@ -34,13 +38,26 @@ export default {
 		}
 	,
 	methods:{
+		play() {
+			store.play()
+		},
+		pause() {
+			store.pause()
+		},
 		onInput(newValue) {
 			newValue = newValue || '00'; // pour gérer le cas du champ vide
 			newValue = parseInt(newValue, 10) // <input> est de type 'text' pour l'instant
-			this.$emit('input', newValue);
-			store.change(newValue);
-			store.state.initialTime = newValue;
+			store.initTime(newValue) 
 		},
+		isNumber: function(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        evt.preventDefault();
+      } else {
+        return true;
+      }
+    }
 
 	
 	}

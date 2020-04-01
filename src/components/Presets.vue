@@ -13,7 +13,7 @@ export default {
   methods:{
     onClick(newValue) {
       store.initTime(newValue);
-      store.toggle();
+      store.pause()
 
 
     }

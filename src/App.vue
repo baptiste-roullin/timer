@@ -8,7 +8,6 @@ v2 : Christel Agier
 v3 : Baptiste Roullin
 
 
-décomposer toggle en play() et pause()
 prevent letters input
 fin
   son
@@ -19,6 +18,7 @@ styles
   qercle qui change de couleur
 notif desktop
 
+  animation qui tressaute 
  -->
 
 <template>

@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { store } from '../store.js';
 
 
 export default {
@@ -28,12 +27,12 @@ export default {
   },
   computed: {
     watchClockRotation: function() {
-      let degree = 360 * -store.state.time / (store.state.initialTime);
+      let degree = 360 * -this.propState.time / (this.propState.initialTime);
       return `transform: rotate(${degree}deg)`
     },
     vanishingCircle: function() {
       let length = Math.PI * 2 * this.radius;
-      var offset = length * store.state.time / (store.state.initialTime) + length;
+      var offset = length * this.propState.time / (this.propState.initialTime) + length;
       return `strokeDashoffset: ${offset}; strokeDasharray: ${length};`
   }    
   },
@@ -80,7 +79,7 @@ export default {
   stroke-width: 1px;
 
   transition-property: all;
-  transition-duration: 0.5s;
+  transition-duration: 0.7s;
 
 }
 
