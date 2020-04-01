@@ -83,12 +83,12 @@ export default {
 
 :root{
   --main:#2D6095;
-  --progress-bar-width:8px;
+  --progress-bar-width:6px;
 };
 
 
 .inside-circle {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

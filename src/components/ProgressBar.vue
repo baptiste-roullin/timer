@@ -1,6 +1,6 @@
 <template>
  
- <div class="ProgressBar"> <svg width="90vh" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+ <div class="ProgressBar"> <svg width="100vh" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
     <g transform="translate(60,60)">
       <circle v-bind:r="radius" class="e-c-base"/>
       <g transform="rotate(-90)">
@@ -46,7 +46,7 @@ export default {
 
 
 .ProgressBar {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

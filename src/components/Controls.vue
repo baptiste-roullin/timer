@@ -69,11 +69,17 @@ export default {
 .controls {
    display:flex;
   justify-content:center;
-  margin: 10px auto 20px;
+  margin: 3rem;
+}
+
+.controls svg {
+width: 45px;
+height: auto;
 }
 
 .controls > * {
-  margin: 0 .5em;
+  margin: 0 1.2em;
+  padding: 0;
 }
 
 .controls button {
@@ -82,7 +88,7 @@ export default {
   cursor: pointer;
 }
 
-.controls button { 
+.controls button:hover { 
   opacity: 0.7; }
 
 

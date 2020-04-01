@@ -54,9 +54,9 @@ export default {
 	width:auto;
 	text-align: center;
 	color : var(--main);
-	margin: 0 0 3.5rem;
-
+	margin: 0 0 4rem;
 }
+
 .input-time{
   border:none;
   font-size : 8rem;
@@ -96,7 +96,7 @@ export default {
 
 .secondes-container {
 	color: #698AAB;
-	margin: 3em auto 0;
+	margin: 1.5rem auto 0;
 	position: relative;
 	cursor: default;
 

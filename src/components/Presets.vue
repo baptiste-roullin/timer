@@ -33,7 +33,7 @@ export default {
   background: white;  
   border: 1px solid #FFC64C;
   border-radius: 65px;
-  color: #3B72FF;
+  color: var(--main);
   font-size: 10px;
   line-height: 12px;
   align-items: center;
