@@ -1,8 +1,8 @@
 
 export const store = {
   state: {
-    time: 60.00,
-    initialTime:60.00,
+    time: 10.00,
+    initialTime:10.00,
     timerIsOn:false
   },
   presets:[60, 300, 600, 1200, 1800],

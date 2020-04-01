@@ -1,6 +1,6 @@
 <template>
  
- <div class="ProgressBar"> <svg width="100vh" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+ <div class="ProgressBar" v-bind:class=" propState.time === 0 ?'finished' : '' " > <svg width="100vh" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
     <g transform="translate(60,60)">
       <circle v-bind:r="radius" class="e-c-base"/>
       <g transform="rotate(-90)">
@@ -57,7 +57,7 @@ export default {
 
 .e-c-base {
   fill: none;
-  stroke: lightgrey;
+  stroke: #dfe7ef;
   stroke-width: var(--progress-bar-width)
 }
 
@@ -75,8 +75,8 @@ export default {
 }
 
 .e-c-pointer {
-  fill: #fff;
-  stroke: #213967;
+  fill: var(--background);
+  stroke: var(--main);
   stroke-width: 1px;
 
   transition-property: all;
@@ -85,5 +85,13 @@ export default {
 }
 
 #e-pointer { transition: transform 0.7s; }
+
+.finished .e-c-base {
+stroke:var(--third);
+}
+
+.finished .e-c-pointer {
+stroke: none;
+}
 
 </style>

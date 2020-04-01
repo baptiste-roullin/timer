@@ -77,10 +77,6 @@ export default {
 }
 
 
-.input-time:focus {
-  outline:none;
-}
-
 .unit {
 	font-size: 1.7em;
 	position: absolute;

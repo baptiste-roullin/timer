@@ -83,7 +83,9 @@ export default {
 
 :root{
   --main:#2D6095;
+  --third:#ffb589;
   --progress-bar-width:6px;
+  --background: #fff4ee;
 };
 
 
@@ -102,27 +104,20 @@ export default {
 
 
 
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: raleway;
-  font-feature-settings: "lnum";
-
-}
-
-
 
 h1 { margin-top:150px; text-align:center;}
 
 body { 
-background-color:#eee;margin: 0;
+background-color: var(--background);
+margin: 0;
 padding: 0;
 min-height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
+font-family: raleway;
+font-feature-settings: "lnum";
+
 }
 
 input, button {

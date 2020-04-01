@@ -51,20 +51,8 @@ export default {
 
 <style scoped>
 
-.input-time{
-  border:none;
-  font-size : 58px;
-  color : var(--main);
-  text-align : center;
-  width:100%;
-  background-color: transparent;
-  text-align: center;
-}
 
 
-.input-time:focus {
-  outline:none;
-}
 
 .controls {
    display:flex;
@@ -83,13 +71,15 @@ height: auto;
 }
 
 .controls button {
-
   border: none;
   cursor: pointer;
+  background: none;
+  opacity: 0.7;
 }
 
 .controls button:hover { 
-  opacity: 0.7; }
+  opacity: 1;
+   }
 
 
 

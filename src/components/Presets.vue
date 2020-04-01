@@ -1,5 +1,5 @@
 <template>
-    <div class=".preset-times">
+    <div class="preset-times">
       <button class="" v-for="preset in presetList" @click="onClick(preset)">{{preset/60}} min<span v-if="preset/60 > 1">s</span></button>
     </div>
 </template>
@@ -31,7 +31,7 @@ export default {
 
 .preset-times button {
   background: white;  
-  border: 1px solid #FFC64C;
+  border: 1px solid var(--third);
   border-radius: 65px;
   color: var(--main);
   font-size: 10px;
@@ -47,6 +47,7 @@ export default {
   font-family: Raleway,Arial,sans-serif;
   transition-property: background, opacity;
   transition-duration: 0.1s;
+
   
   
 }
@@ -56,9 +57,10 @@ export default {
 }
 
 
-.preset-times:hover button:hover {
-  background: #FFC64C;  
+.preset-times:hover button {
+  background: var(--third);  
   opacity:1;
+  color: black
 }
 
 </style>
