@@ -34,7 +34,7 @@ export const store = {
   }, 
   addTime(addendum) {
     this.state.time = this.state.time + addendum;
-    this.state.initialTime = this.state.time;
+    this.state.initialTime = this.state.initialTime + addendum;
 
   },
 

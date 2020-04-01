@@ -33,8 +33,20 @@ export default {
       store.toggle();
     },
     addMinute() {
+
+      if (this.propState.timerIsOn) {
+        var wasPaused = true;
+      }
+
+      store.pause() 
       store.addTime(60)
+
+      if (wasPaused) { 
+        store.play() 
+      }
+
     },
+
     reset() {
       store.reset()
     }
