@@ -85,7 +85,7 @@ export const store = {
   notif() {
     let urlIcon = "../img/logo.png";
     let percent = store.state.time / store.state.initialTime * 100;
-    let mainMsg = `Il vous reste ${store.state.time} minutes ! `;
+    let mainMsg = `Il vous reste ${store.state.time%60} minutes ! `;
     let fireNotif= function (msg) {
         var notification = new Notification(msg, {icon: urlIcon });
       }
