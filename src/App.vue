@@ -8,10 +8,8 @@ v2 : Christel Agier
 v3 : Baptiste Roullin
 
 
-prevent letters input
 fin
   son
-  reset quand on reclique sur play
   couleur de fond ?
 
 styles
@@ -55,6 +53,11 @@ export default {
   methods: {
     reset() {
       store.reset()
+    },
+    notifs() {
+      if (store.state.time === 60) {
+         var notification = new Notification("Hi there!");
+      }
     }
   },
     data () {
@@ -64,6 +67,9 @@ export default {
     }
   },
 }
+
+
+
 
 
 

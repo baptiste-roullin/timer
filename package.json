@@ -1,6 +1,6 @@
 {
   "name": "Timer",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -36,7 +36,8 @@
     ],
     "rules": {
       "vue/require-v-for-key": "off",
-      "vue/no-console": "off"
+      "vue/no-console": "off",
+      "no-unused-vars":"off"
     },
     "parserOptions": {
       "parser": "babel-eslint"

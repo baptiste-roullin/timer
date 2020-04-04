@@ -9,22 +9,30 @@ export const store = {
 
   toggle() {
     if ( (this.state.timerIsOn === false) && (this.state.time > 0) ) {
-      this.state.timerIsOn = true;
-      this.timerLoop(this.state.time) ;
+      this.play()
 
       }
+    else if  ((this.state.timerIsOn === false) && (this.state.time === 0))  {
+      this.reset();
+      this.play();
+    }
     else {
-      this.state.timerIsOn = false;
-      clearInterval(this.intervalTimer);
+      this.pause()
     }
   },
+  
   pause()   {
-      this.state.timerIsOn = false;
-      clearInterval(this.intervalTimer);
+     if (Notification.permission !== "denied") {
+       Notification.requestPermission()
+    }
+    this.state.timerIsOn = false;
+    clearInterval(this.intervalTimer);
+
   },
   play()   {
       this.state.timerIsOn = true;
       this.timerLoop(this.state.time) ;
+
   },
 
   reset() {
@@ -57,6 +65,7 @@ export const store = {
   this.intervalTimer = setInterval(function(){
     let timeLeft = Math.round((endOfCountdown - Date.now()) / 1000);
     store.change(timeLeft);
+    store.notif()
     if(timeLeft === 0){
 
       clearInterval(store.intervalTimer);
@@ -65,6 +74,14 @@ export const store = {
       return ;
     }
      }, 1000);
+},
+
+notif() {
+   if (store.state.time === 59) {
+         var notification = new Notification("Hi there!");
+         alert("test")
+      }
+
 }
   
 }

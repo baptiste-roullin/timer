@@ -36,6 +36,8 @@ export default {
 
       if (this.propState.timerIsOn) {
         var wasPaused = true;
+
+
       }
 
       store.pause() 
@@ -71,7 +73,7 @@ height: auto;
 }
 
 .controls > * {
-  margin: 0 1.2em;
+  margin: 0 2.3em;
   padding: 0;
 }
 

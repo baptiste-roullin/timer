@@ -87,6 +87,8 @@ export default {
   box-shadow: inset 0px 1px 2px #698AAB, 0px 0px 0px white;
   font-family: inherit;
   transition: all .2s cubic-bezier(.22,.61,.36,1);
+  width: 19.6rem;
+  border-radius: 0.05em;
 }
 
 .input-time:focus {
@@ -97,9 +99,11 @@ export default {
 .unit {
 	font-size: 1.7em;
 	position: absolute;
-	right: 8%;
-	bottom: 0%;
+	right: 17%;
+	bottom: 10%;
+	color: #698AAB;
 }
+
 
 
 
@@ -117,12 +121,13 @@ export default {
 
 .secondes {
 	text-align: center;
-	width: 13rem;
 	display: block;
-	border-bottom: 2px solid #698AAB;
 	margin: auto;
-	height: 1.05em;
 	font-size:3.5rem;
+	background-color: #f8f8f8;
+	width: 19.6rem;
+	border-radius: 0.1em;
+
 }
 
 
