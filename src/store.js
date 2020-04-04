@@ -68,7 +68,10 @@ export const store = {
     this.intervalTimer = setInterval(function(){
       let timeLeft = Math.round((endOfCountdown - Date.now()) / 1000);
       store.change(timeLeft);
-      store.notif()
+      if (store.state.initialTime > 240) {
+
+        store.notif()
+      }
       if(timeLeft === 0){
 
         clearInterval(store.intervalTimer);
@@ -80,24 +83,27 @@ export const store = {
   },
 
   notif() {
-     let urlIcon = "../assets/logo.png";
-     let percent = store.state.time / store.state.initialTime * 100;
-  switch (percent) {
-    case 50:
-      var notification = new Notification(`Il vous reste ${store.state.time} minutes ! ` , {icon: urlIcon });
-      break;
-    case 25:
-      var notification = new Notification(`Il vous reste ${store.state.time} minutes ! ` , {icon: urlIcon });
-      break;
-    case 10:
-      var notification = new Notification(`Il vous reste ${store.state.time} minutes ! ` , {icon: urlIcon });
-      break;
-    case 0:
-       var notification = new Notification("c'est fini !", {icon: urlIcon} );
-      break;
-    }
+    let urlIcon = "../img/logo.svg";
+    let percent = store.state.time / store.state.initialTime * 100;
+    let mainMsg = fireNotif(`Il vous reste ${store.state.time} minutes ! `);
 
+    switch (percent) {
+      case 50:
+        fireNotif(mainMsg)
+        break;
+      case 25:
+        fireNotif(mainMsg)
+        break;
+      case 10:
+        fireNotif(mainMsg)
+        break;
+      case 0:
+        fireNotif("c'est fini !")
+        break;
+      }
+    },
+  fireNotif(msg) {
+    var notification = new Notification(msg, {icon: urlIcon });
 
-    }
-  
+  }
 }

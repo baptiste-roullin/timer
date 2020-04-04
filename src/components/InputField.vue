@@ -7,9 +7,8 @@
 			:name="name" 
 			class="input-time" 
 			:value="Math.floor(value/60)" 
-			@blur="onInput($event.target.value*60)"
-			@keypress="isNumber($event)"
-			@keyup.enter="$event.target.blur($event.target.value*60), play()"
+			@keyup="onInput($event)"
+			@keyup.enter="onInput($event), play()"
 			@focus="pause()"
 		> 
 
@@ -44,20 +43,31 @@ export default {
 		pause() {
 			store.pause()
 		},
-		onInput(newValue) {
-			newValue = newValue || '00'; // pour gérer le cas du champ vide
-			newValue = parseInt(newValue, 10) // <input> est de type 'text' pour l'instant
-			store.initTime(newValue) 
+		isNumber(event) {
+			const regex = RegExp('[0-9]');
+			if (regex.test(event.key)) {
+				return true;
+			}
+			else {
+				return false
+			}
 		},
-		isNumber: function(evt) {
-      evt = (evt) ? evt : window.event;
-      var charCode = (evt.which) ? evt.which : evt.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        evt.preventDefault();
-      } else {
-        return true;
-      }
-    }
+		onInput(event) {
+			if (this.isNumber(event)) {
+				let newValue = event.target.value*60
+
+
+				newValue = parseInt(newValue, 10) 
+
+				store.initTime(newValue) 
+			}
+			else {
+				event.preventDefault();
+
+				return;
+
+			}
+		}
 
 	
 	}

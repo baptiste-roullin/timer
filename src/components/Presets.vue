@@ -58,9 +58,9 @@ export default {
 
 
 .preset-times:hover button {
-  background: var(--third);  
+  background: #fcd7c1;  
   opacity:1;
-  color: black
+  color: var(--main)
 }
 
 </style>

@@ -14,9 +14,9 @@ fin
 
 styles
   qercle qui change de couleur
-notif desktop
 
-  animation qui tressaute 
+pause au clavier
+
  -->
 
 <template>
@@ -55,7 +55,7 @@ export default {
       store.reset()
     }  
   },
-  
+
     data () {
     return {
       sharedState: store.state,
