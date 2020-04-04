@@ -2,12 +2,17 @@
  
 	<div class="temps InputField">
 	<div class="minutes-container">		
+
+		<!-- value : prop
+		le temps est stocké en secondes.
+		-->
 		<input 
 			type="text"
 			:name="name" 
 			class="input-time" 
 			:value="Math.floor(value/60)" 
 			@keyup="onInput($event)"
+			@keyup.enter="play()"
 			@focus="pause()"
 		> 
 
@@ -16,7 +21,7 @@
 	</div>
 
 		<div class="secondes-container">		
-			<span class="secondes">{{value%60 || '0'}}</span>
+			<span class="secondes">{{value%60}}</span>
 			<span class="unit">sec</span>
 		</div>
 
@@ -30,11 +35,7 @@ import { store } from '../store.js';
 export default {
 	name: 'InputField',
 		props:['name', 'value'],
-		data () {
-			return {
-			}
-		}
-	,
+
 	methods:{
 		play() {
 			store.play()
@@ -54,21 +55,14 @@ export default {
 		onInput(event) {
 			if (this.isNumber(event)) {
 				let newValue = event.target.value*60
-
-
 				newValue = parseInt(newValue, 10) 
-
 				store.initTime(newValue) 
 			}
 			else {
 				event.preventDefault();
-
 				return;
-
 			}
 		}
-
-	
 	}
 	
 }

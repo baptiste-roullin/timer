@@ -11,7 +11,8 @@ new Vue({
   render: h => h(App),
   methods: {
 	SpaceListener: function(evt) {
-	if (evt.code === "Space" || evt.code === "Enter") {
+	//si on presse space ou entrée et que le focus n'est pas sur un champ ou un bouton
+	if ( (evt.code === "Space" || evt.code === "Enter")  && (document.activeElement.tagName === "BODY") ) {
 		store.toggle()
 		}
 	}

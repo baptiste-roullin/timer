@@ -34,9 +34,8 @@ pause au clavier
 </template>
 
 <script>
-import InputField from   './components/InputField.vue'
-
-import ProgressBar from   './components/ProgressBar.vue'
+import InputField from './components/InputField.vue'
+import ProgressBar from './components/ProgressBar.vue'
 import Controls from './components/Controls.vue'
 import Presets from  './components/Presets.vue'
 import { store } from './store.js';
@@ -63,11 +62,6 @@ export default {
     }
   },
 }
-
-
-
-
-
 
 </script>
 

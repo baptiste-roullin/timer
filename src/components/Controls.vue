@@ -32,21 +32,21 @@ export default {
     toggle() {
       store.toggle();
     },
+
     addMinute() {
-
+      // Ajouter une minute doit pouvoir se faire même alors que le minuteur tourne.
+      // mais faire ça fout le bordel dans l'horloge interne. 
+      // Du coup on force la pause, puis SI le minuteur tournait on redémarre.
       if (this.propState.timerIsOn) {
-        var wasPaused = true;
-
-
+        var wasPlaying = true;
       }
 
       store.pause() 
       store.addTime(60)
 
-      if (wasPaused) { 
+      if (wasPlaying) { 
         store.play() 
       }
-
     },
 
     reset() {
