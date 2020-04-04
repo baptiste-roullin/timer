@@ -9,6 +9,9 @@ Remarques :
 * Fonctionne en offline
 * Via Chrome, peut être installé comme une app
 
+<div align="center">
+<img src="https://raw.githubusercontent.com/Saint-loup/timer/master/src/assets/screenshot.png" />
+</div>
 
 
 ## Project setup
