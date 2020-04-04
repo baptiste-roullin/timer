@@ -53,13 +53,9 @@ export default {
   methods: {
     reset() {
       store.reset()
-    },
-    notifs() {
-      if (store.state.time === 60) {
-         var notification = new Notification("Hi there!");
-      }
-    }
+    }  
   },
+  
     data () {
     return {
       sharedState: store.state,
