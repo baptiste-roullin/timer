@@ -91,16 +91,16 @@ export const store = {
       }
     switch (percent) {
       case 50:
-        this.fireNotif(mainMsg)
+        fireNotif(mainMsg)
         break;
       case 25:
-        this.fireNotif(mainMsg)
+        fireNotif(mainMsg)
         break;
       case 10:
-        this.fireNotif(mainMsg)
+        fireNotif(mainMsg)
         break;
       case 0:
-        this.fireNotif("c'est fini !")
+        fireNotif("c'est fini !")
         break;
       }
     }
