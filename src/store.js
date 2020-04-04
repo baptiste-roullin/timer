@@ -85,25 +85,24 @@ export const store = {
   notif() {
     let urlIcon = "../img/logo.svg";
     let percent = store.state.time / store.state.initialTime * 100;
-    let mainMsg = fireNotif(`Il vous reste ${store.state.time} minutes ! `);
-
+    let mainMsg = `Il vous reste ${store.state.time} minutes ! `;
+    let fireNotif= function (msg) {
+        var notification = new Notification(msg, {icon: urlIcon });
+      }
     switch (percent) {
       case 50:
-        fireNotif(mainMsg)
+        this.fireNotif(mainMsg)
         break;
       case 25:
-        fireNotif(mainMsg)
+        this.fireNotif(mainMsg)
         break;
       case 10:
-        fireNotif(mainMsg)
+        this.fireNotif(mainMsg)
         break;
       case 0:
-        fireNotif("c'est fini !")
+        this.fireNotif("c'est fini !")
         break;
       }
-    },
-  fireNotif(msg) {
-    var notification = new Notification(msg, {icon: urlIcon });
-
-  }
+    }
+  
 }
