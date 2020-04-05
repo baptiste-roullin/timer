@@ -7,16 +7,6 @@ v1 : https://www.cssscript.com/circular-countdown-timer-javascript-css3/
 v2 : Christel Agier
 v3 : Baptiste Roullin
 
-
-fin
-  son
-  couleur de fond ?
-
-styles
-  qercle qui change de couleur
-
-pause au clavier
-
  -->
 
 <template>
