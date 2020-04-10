@@ -11,7 +11,7 @@
 			:name="name" 
 			class="input-time" 
 			:value="Math.floor(value/60)" 
-			@keyup="onInput($event)"
+			@keypress="onInput($event)"
 			@keyup.enter="play()"
 			@focus="pause()"
 		> 
