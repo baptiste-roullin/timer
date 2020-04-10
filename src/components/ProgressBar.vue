@@ -6,7 +6,7 @@
       <g transform="rotate(-90)">
         <circle v-bind:r="radius" class="e-c-progress" v-bind:style="vanishingCircle"/>
         <g id="e-pointer" >
-          <circle v-bind:cx="radius" cy="0" r="5" v-bind:style="watchClockRotation" class="e-c-pointer" v-bind:class="propState.timerIsOn ? '' : 'inactive' "/>
+          <circle v-bind:cx="radius" cy="0" r="3" v-bind:style="watchClockRotation" class="e-c-pointer" v-bind:class="propState.timerIsOn ? '' : 'inactive' "/>
         </g>
       </g>
     </g>
@@ -64,22 +64,22 @@ export default {
   fill: none;
   stroke: var(--main);
   stroke-width: var(--progress-bar-width);
-  transition-property: stroke, stroke-dashoffset;
+  transition-property: all;
   transition-duration: 0.5s;
 }
 
 .e-c-pointer.inactive {
-  fill: #96b0ca
+  fill: #96b0ca;
+  stroke:none;
 
 }
 
 .e-c-pointer {
-  fill: var(--background);
-  stroke: var(--main);
+  fill:var(--background);
+  stroke:var(--third);
   stroke-width: 1px;
-
   transition-property: all;
-  transition-duration: 0.7s;
+  transition-duration: 0.5s;
 
 }
 

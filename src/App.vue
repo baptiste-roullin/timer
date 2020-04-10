@@ -70,7 +70,7 @@ export default {
 :root{
   --main:#2D6095;
   --third:#ffb589;
-  --progress-bar-width:6px;
+  --progress-bar-width:3px;
   --background: #fff4ee;
   --width: 42vmin;
   --margin: 9vmin;
