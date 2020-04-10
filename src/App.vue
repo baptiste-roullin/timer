@@ -72,6 +72,8 @@ export default {
   --third:#ffb589;
   --progress-bar-width:6px;
   --background: #fff4ee;
+  --width: 42vmin;
+  --margin: 9vmin;
 };
 
 
@@ -103,6 +105,7 @@ justify-content: center;
 align-items: center;
 font-family: raleway;
 font-feature-settings: "lnum";
+
 
 }
 

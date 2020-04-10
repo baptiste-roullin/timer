@@ -1,6 +1,6 @@
 <template>
  
-	<div class="temps InputField">
+	<div class="InputField">
 	<div class="minutes-container">		
 
 		<!-- value : prop
@@ -16,13 +16,12 @@
 			@focus="pause()"
 		> 
 
-		<span class="minutes unit">min</span>
+		<!-- <span class="minutes unit">min</span> -->
 
 	</div>
 
 		<div class="secondes-container">		
 			<span class="secondes">{{value%60}}</span>
-			<span class="unit">sec</span>
 		</div>
 
 	</div>
@@ -74,12 +73,13 @@ export default {
 	width:auto;
 	text-align: center;
 	color : var(--main);
-	margin: 0 0 4rem;
+	margin: 0 0 var(--margin);
+
+
 }
 
 .input-time{
   border:none;
-  font-size : 8rem;
   color : var(--main);
   text-align : center;
   width: 13rem;
@@ -90,35 +90,25 @@ export default {
   box-shadow: inset 0px 1px 2px #698AAB, 0px 0px 0px white;
   font-family: inherit;
   transition: all .2s cubic-bezier(.22,.61,.36,1);
-  width: 19.6rem;
+  width: var(--width);
   border-radius: 0.05em;
+  font-size: calc( 60px + 4vmin);
+  font-weight: bold;
+
 }
 
 .input-time:focus {
-    box-shadow: 0px 0px 0px white inset, 0px 3px 3px #698AAB;
+	box-shadow: 0px 0px 0px white inset, 0px 3px 3px #698AAB;
 }
 
 
-.unit {
-	font-size: 1.7em;
-	position: absolute;
-	right: 17%;
-	bottom: 10%;
-	color: #698AAB;
-}
-
-
-
-
-.minutes-container  {
-	position: relative;
-}
 
 .secondes-container {
 	color: #698AAB;
 	margin: 1.5rem auto 0;
-	position: relative;
 	cursor: default;
+	margin: calc(var(--margin) / 2) auto 0;
+
 
 }
 
@@ -126,13 +116,40 @@ export default {
 	text-align: center;
 	display: block;
 	margin: auto;
-	font-size:3.5rem;
+	font-size: calc( 25px + 4vmin);
 	background-color: #f8f8f8;
-	width: 19.6rem;
+	width: var(--width);
 	border-radius: 0.1em;
 
 }
 
+
+
+/*UNITÉS*/
+
+.minutes-container, .secondes-container {
+	position: relative;
+
+}
+
+
+.minutes-container:after {
+	content:"min";
+}
+
+.secondes-container:after {
+	content:"sec";
+
+}
+
+.minutes-container:after, .secondes-container:after  {
+
+	font-size: 1.5em;
+	position: absolute;
+	right: 4%;
+	bottom: 10%;
+	color: #698AAB;
+}
 
 
 

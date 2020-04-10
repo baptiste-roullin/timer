@@ -25,8 +25,10 @@ export default {
 
 .preset-times {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  justify-content: space-between;
+  width: calc(var(--width) - 3rem);
+  margin: calc(var(--margin) / 2) auto 0;
+
 }
 
 .preset-times button {
@@ -34,16 +36,15 @@ export default {
   border: 1px solid var(--third);
   border-radius: 65px;
   color: var(--main);
-  font-size: 10px;
   line-height: 12px;
   align-items: center;
   text-align: center; 
   cursor:pointer;
   opacity:0.3;
-  margin: 0 5px;
+  margin: 0;
   padding-top: 2px;
   height: 1.8em;
-  font-size: 1rem;
+  font-size: calc( 6px + 1vmin);
   font-family: Raleway,Arial,sans-serif;
   transition-property: background, opacity;
   transition-duration: 0.1s;

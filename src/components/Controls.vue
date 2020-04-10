@@ -1,19 +1,19 @@
 <template>
 	<div class="controls">
 		<button class="addMinute" @click="addMinute()">
-      <inline-svg :src="require('../assets/addMinute.svg')"></inline-svg>
-    </button>
-    
-    <div class="toggle-wrapper" >
-      <button   id="pause" @click="toggle()" >
-        <inline-svg v-show="propState.timerIsOn" class="pause" :src="require('../assets/pause.svg')"></inline-svg>
-        <inline-svg v-show="!propState.timerIsOn" class="pause" :src="require('../assets/play.svg')"></inline-svg>
-      </button>
+			<inline-svg :src="require('../assets/addMinute.svg')"></inline-svg>
+		</button>
+		
+		<div class="toggle-wrapper" >
+			<button   id="pause" @click="toggle()" >
+				<inline-svg v-show="propState.timerIsOn" class="pause" :src="require('../assets/pause.svg')"></inline-svg>
+				<inline-svg v-show="!propState.timerIsOn" class="pause" :src="require('../assets/play.svg')"></inline-svg>
+			</button>
 
-    </div>
-    <button class="restart" @click="reset()">
-      <inline-svg :src="require('../assets/reset.svg')"></inline-svg>
-    </button>
+		</div>
+		<button class="restart" @click="reset()">
+			<inline-svg :src="require('../assets/reset.svg')"></inline-svg>
+		</button>
 	</div>
 </template>
 
@@ -24,35 +24,35 @@ import InlineSvg from 'vue-inline-svg';
 export default {
 	name: 'controls',
 
-  components: {InlineSvg},
+	components: {InlineSvg},
 
-  props: ['propState'],
+	props: ['propState'],
 
-  methods:{
-    toggle() {
-      store.toggle();
-    },
+	methods:{
+		toggle() {
+			store.toggle();
+		},
 
-    addMinute() {
-      // Ajouter une minute doit pouvoir se faire même alors que le minuteur tourne.
-      // mais faire ça fout le bordel dans l'horloge interne. 
-      // Du coup on force la pause, puis SI le minuteur tournait on redémarre.
-      if (this.propState.timerIsOn) {
-        var wasPlaying = true;
-      }
+		addMinute() {
+			// Ajouter une minute doit pouvoir se faire même alors que le minuteur tourne.
+			// mais faire ça fout le bordel dans l'horloge interne. 
+			// Du coup on force la pause, puis SI le minuteur tournait on redémarre.
+			if (this.propState.timerIsOn) {
+				var wasPlaying = true;
+			}
 
-      store.pause() 
-      store.addTime(60)
+			store.pause() 
+			store.addTime(60)
 
-      if (wasPlaying) { 
-        store.play() 
-      }
-    },
+			if (wasPlaying) { 
+				store.play() 
+			}
+		},
 
-    reset() {
-      store.reset()
-    }
-  }
+		reset() {
+			store.reset()
+		}
+	}
 }
 </script>
 
@@ -62,31 +62,29 @@ export default {
 
 
 .controls {
-   display:flex;
-  justify-content:center;
-  margin: 3rem;
+	display:flex;
+	margin: 0 auto calc(var(--margin) / 2 );
+	justify-content: space-between;
+	width: calc(var(--width) - 3rem);
 }
 
 .controls svg {
-width: 45px;
-height: auto;
+	width: 4vmin;
+	height: auto;
 }
 
-.controls > * {
-  margin: 0 2.3em;
-  padding: 0;
-}
+
 
 .controls button {
-  border: none;
-  cursor: pointer;
-  background: none;
-  opacity: 0.7;
+	border: none;
+	cursor: pointer;
+	background: none;
+	opacity: 0.7;
 }
 
 .controls button:hover { 
-  opacity: 1;
-   }
+	opacity: 1;
+	}
 
 
 

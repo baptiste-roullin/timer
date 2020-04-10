@@ -5,7 +5,7 @@ export const store = {
     initialTime:60.00,
     timerIsOn:false
   },
-  presets:[60, 300, 600, 1200, 1800],
+  presets:[60, 300, 600, 1200],
 
   toggle() {
     if ( (this.state.timerIsOn === false) && (this.state.time > 0) ) {
