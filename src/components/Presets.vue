@@ -43,7 +43,7 @@ export default {
   opacity:0.3;
   margin: 0;
   padding-top: 2px;
-  height: 1.8em;
+  min-height: 1.8em;
   font-size: calc( 6px + 1vmin);
   font-family: Raleway,Arial,sans-serif;
   transition-property: background, opacity;

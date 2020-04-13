@@ -1,6 +1,6 @@
 <template>
  
- <div class="ProgressBar" v-bind:class=" propState.time === 0 ?'finished' : '' " > <svg width="100vh" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+ <div class="ProgressBar" v-bind:class=" propState.time === 0 ?'finished' : '' " > <svg width="100vmin" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
     <g transform="translate(60,60)">
       <circle v-bind:r="radius" class="e-c-base"/>
       <g transform="rotate(-90)">

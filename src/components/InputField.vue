@@ -151,6 +151,14 @@ export default {
 	color: #698AAB;
 }
 
-
+@media screen and (max-width:600px) {
+ 
+	.InputField{
+		text-align: left;
+	}
+	.input-time{
+		text-align: left;
+	}
+}
 
 </style>

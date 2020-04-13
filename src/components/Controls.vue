@@ -65,7 +65,7 @@ export default {
 	display:flex;
 	margin: 0 auto calc(var(--margin) / 2 );
 	justify-content: space-between;
-	width: calc(var(--width) - 3rem);
+	width: calc(var(--width) - 3vmin);
 }
 
 .controls svg {
