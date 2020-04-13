@@ -153,10 +153,8 @@ export default {
 
 @media screen and (max-width:600px) {
  
-	.InputField{
-		text-align: left;
-	}
-	.input-time{
+
+	.input-time, .secondes{
 		text-align: left;
 	}
 }
