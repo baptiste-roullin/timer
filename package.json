@@ -39,7 +39,7 @@
       "vue/no-console": "off",
       "no-unused-vars": "off",
       "no-redeclare": "off",
-      "no-debugger":"off"
+      "no-debugger": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"
