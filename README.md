@@ -1,6 +1,6 @@
 # timer
 
-Un minuteur en Vue.js. [Disponible sur cette page](https://toutcequibouge.net/Divers/Timer/)
+Un minuteur en Vue.js. [Disponible sur cette page](https://toutcequibouge.net/Divers/Timer/).
 
 Remarques :
 
