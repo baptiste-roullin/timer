@@ -2,17 +2,17 @@
 export const store = {
   state: {
     time: 60.00,
-    initialTime:60.00,
-    timerIsOn:false
+    initialTime: 60.00,
+    timerIsOn: false
   },
-  presets:[60, 300, 600, 1200],
+  presets: [60, 300, 600, 1200],
 
   toggle() {
-    if ( (this.state.timerIsOn === false) && (this.state.time > 0) ) {
+    if ((this.state.timerIsOn === false) && (this.state.time > 0)) {
       this.play()
 
-      }
-    else if  ((this.state.timerIsOn === false) && (this.state.time === 0))  {
+    }
+    else if ((this.state.timerIsOn === false) && (this.state.time === 0)) {
       this.reset();
       this.play();
     }
@@ -20,28 +20,28 @@ export const store = {
       this.pause()
     }
   },
-  
-  pause()   {
+
+  pause() {
     this.state.timerIsOn = false;
     clearInterval(this.intervalTimer);
 
   },
 
-  play()   {
-      
-      this.state.timerIsOn = true;
-      this.timerLoop(this.state.time) ;
-      
-      if (Notification.permission !== "denied") {
-        Notification.requestPermission()
-       }      
+  play() {
+
+    this.state.timerIsOn = true;
+    this.timerLoop(this.state.time);
+
+    if (Notification.permission !== "denied") {
+      Notification.requestPermission()
+    }
   },
 
   reset() {
     this.change(this.state.initialTime)
     this.pause();
 
-  }, 
+  },
 
   addTime(addendum) {
     this.state.time = this.state.time + addendum;
@@ -58,24 +58,24 @@ export const store = {
     this.state.time = time;
   },
 
-  timerLoop(seconds){
+  timerLoop(seconds) {
 
     // var = maintenant + durée du compte à rebours
     let endOfCountdown = Date.now() + (seconds * 1000);
 
-    this.intervalTimer = setInterval(function(){
-     
-     if (store.state.initialTime > 240) {
+    this.intervalTimer = setInterval(function () {
+
+      if (store.state.initialTime > 240) {
         store.notif()
       }
 
       let timeLeft = Math.round((endOfCountdown - Date.now()) / 1000);
       store.change(timeLeft);
 
-      if(timeLeft === 0){
+      if (timeLeft === 0) {
         clearInterval(store.intervalTimer);
         store.state.timerIsOn = false;
-        return ;
+        return;
       }
 
     }, 1000);
@@ -84,10 +84,10 @@ export const store = {
   notif() {
     let urlIcon = "../img/logo.png";
     let percent = store.state.time / store.state.initialTime * 100;
-    let mainMsg = `Il vous reste ${store.state.time%60} minutes ! `;
-    let fireNotif= function (msg) {
-        var notification = new Notification(msg, {icon: urlIcon });
-      }
+    let mainMsg = `Il vous reste ${store.state.time % 60} minutes ! `;
+    let fireNotif = function (msg) {
+      var notification = new Notification(msg, { icon: urlIcon });
+    }
     switch (percent) {
       case 50:
         fireNotif(mainMsg)
@@ -101,7 +101,7 @@ export const store = {
       case 0:
         fireNotif("c'est fini !")
         break;
-      }
     }
-  
+  }
+
 }

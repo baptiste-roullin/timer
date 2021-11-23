@@ -1,26 +1,26 @@
 <template>
- 
+
 	<div class="InputField">
-	<div class="minutes-container">		
+	<div class="minutes-container">
 
 		<!-- value : prop
 		le temps est stocké en secondes.
 		-->
-		<input 
+		<input
 			type="text"
-			:name="name" 
-			class="input-time" 
-			:value="Math.floor(value/60)" 
-			@keypress="onInput($event)"
-			@keyup.enter="play()"
+			:name="name"
+			class="input-time"
+			:value="Math.floor(value/60)"
+			@keyup="onInput($event)"
+			@keyup.enter="play(); "
 			@focus="pause()"
-		> 
+		>
 
 		<!-- <span class="minutes unit">min</span> -->
 
 	</div>
 
-		<div class="secondes-container">		
+		<div class="secondes-container">
 			<span class="secondes">{{value%60}}</span>
 		</div>
 
@@ -38,6 +38,7 @@ export default {
 	methods:{
 		play() {
 			store.play()
+
 		},
 		pause() {
 			store.pause()
@@ -54,8 +55,8 @@ export default {
 		onInput(event) {
 			if (this.isNumber(event)) {
 				let newValue = event.target.value*60
-				newValue = parseInt(newValue, 10) 
-				store.initTime(newValue) 
+				newValue = parseInt(newValue, 10)
+				store.initTime(newValue)
 			}
 			else {
 				event.preventDefault();
@@ -63,7 +64,7 @@ export default {
 			}
 		}
 	}
-	
+
 }
 </script>
 
@@ -152,7 +153,7 @@ export default {
 }
 
 @media screen and (max-width:600px) {
- 
+
 
 	.input-time, .secondes{
 		text-align: left;
