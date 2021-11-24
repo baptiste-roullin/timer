@@ -11,9 +11,10 @@
 			:name="name"
 			class="input-time"
 			:value="Math.floor(value/60)"
-			@keyup="pause(); onInput($event)"
-			@keyup.enter="play(); "
+			@keyup="updateTime($event)"
 			@focus="pause()"
+			@keyup.enter=" play(); "
+
 		>
 
 		<!-- <span class="minutes unit">min</span> -->
@@ -37,7 +38,7 @@ export default {
 
 	methods:{
 		play() {
-			store.play()
+			store.play(store.state.time)
 
 		},
 		pause() {
@@ -52,10 +53,11 @@ export default {
 				return false
 			}
 		},
-		onInput(event) {
+		updateTime(event) {
+			this.pause();
+
 			if (this.isNumber(event)) {
-				let newValue = event.target.value*60
-				newValue = parseInt(newValue, 10)
+				let newValue = parseInt(event.target.value*60, 10)
 				store.initTime(newValue)
 			}
 			else {
