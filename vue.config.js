@@ -1,8 +1,6 @@
 module.exports = {
 
-  publicPath: process.env.NODE_ENV === 'dev'
-    ? '/'
-    : '/Timer',
+  publicPath: '/Timer',
   pwa: {
     themeColor: '#96b0ca',
     msTileColor: '#000000',
